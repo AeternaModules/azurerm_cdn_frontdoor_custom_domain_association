@@ -1,3 +1,7 @@
+output "cdn_frontdoor_custom_domain_associations_id" {
+  description = "Map of id values across all cdn_frontdoor_custom_domain_associations, keyed the same as var.cdn_frontdoor_custom_domain_associations"
+  value       = { for k, v in azurerm_cdn_frontdoor_custom_domain_association.cdn_frontdoor_custom_domain_associations : k => v.id }
+}
 output "cdn_frontdoor_custom_domain_associations_cdn_frontdoor_custom_domain_id" {
   description = "Map of cdn_frontdoor_custom_domain_id values across all cdn_frontdoor_custom_domain_associations, keyed the same as var.cdn_frontdoor_custom_domain_associations"
   value       = { for k, v in azurerm_cdn_frontdoor_custom_domain_association.cdn_frontdoor_custom_domain_associations : k => v.cdn_frontdoor_custom_domain_id }
